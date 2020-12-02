@@ -73,6 +73,7 @@
   &__description {
     text-align: left;
     text-transform: uppercase;
+    min-width: 600px;
   }
 
   &__sup-title {
@@ -81,34 +82,16 @@
 
   &__title {
     font-size: 40px;
-    animation-delay: 3.5s ;
-  }
-}
 
-.typewriter {
-  overflow: hidden;
-  border-right: .15em solid orange;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: .15em;
-  animation: typing 3.5s steps(40, end),
-  blink-caret .75s step-end;
-}
+    span {
+      display: inline-block;
+      min-width: 100px;
+    }
 
-@keyframes typing {
-  from {
-    width: 0
-  }
-  to {
-    width: 100%
-  }
-}
-
-@keyframes blink-caret {
-  from, to {
-    border-color: transparent
-  }
-  50% {
-    border-color: orange;
+    span:after {
+      display: inline-block;
+      margin-left: 2px;
+      transform: translateY(-5px);
+    }
   }
 }
