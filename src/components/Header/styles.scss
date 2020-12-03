@@ -9,8 +9,26 @@
   transition: .4s all ease-in;
   z-index: 999;
 
+  &:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    width: auto;
+    height: 100%;
+    z-index: -1;
+    background: rgba($black-color, .75);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: .4s all ease-in;
+  }
+
   &.scrolling {
-    background: $black-color;
+    &:after {
+      opacity: 1;
+    }
 
     .header__wrapper {
       min-height: $header-h-m;
@@ -27,9 +45,6 @@
     padding: 5px 0;
 
     min-height: $header-h-d;
-  }
-
-  &__logo {
   }
 
   &__navbar {

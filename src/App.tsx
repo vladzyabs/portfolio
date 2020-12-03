@@ -4,12 +4,12 @@ import HomePage from './pages/home'
 
 const App: React.FC = () => {
 	return (
-		<div>
+		<>
 			<Header/>
 
 			<HomePage/>
 
-		</div>
+		</>
 	)
 }
 
