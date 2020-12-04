@@ -2,12 +2,17 @@ import React from 'react'
 import cn from 'classnames'
 import { Container, Logo } from '../common'
 import Navbar from './Navbar'
+import BurgerBtn from './BurgerBtn'
 
 import './styles.scss'
 
 const Header: React.FC = () => {
 
 	const [scrolling, setScrolling] = React.useState<boolean>(false)
+	const [activeNavbar, setActiveNavbar] = React.useState<boolean>(false)
+
+	const toggleActiveNavbar = () => setActiveNavbar(prevState => !prevState)
+	const offNavbar = () => setActiveNavbar(prevState => false)
 
 	const scrollPageHandler = () => {
 		window.pageYOffset > 50
@@ -26,7 +31,8 @@ const Header: React.FC = () => {
 			<Container>
 				<div className={'header__wrapper'}>
 					<Logo className={'header__logo'}/>
-					<Navbar/>
+					<BurgerBtn onToggle={toggleActiveNavbar} activeClose={activeNavbar}/>
+					<Navbar active={activeNavbar} offNavbar={offNavbar}/>
 				</div>
 			</Container>
 		</header>

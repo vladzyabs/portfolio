@@ -9,6 +9,12 @@
   transition: .4s all ease-in;
   z-index: 999;
 
+  @media (min-width: 901px) {
+    .burger-btn {
+      display: none;
+    }
+  }
+
   &:after {
     position: absolute;
     content: "";
@@ -87,6 +93,41 @@
         &:hover:after {
           transform: scaleX(1);
         }
+      }
+    }
+
+    @media (max-width: 900px) {
+      position: absolute;
+      z-index: -1;
+      right: 0;
+      top: 0;
+      padding-top: $header-h-d;
+      width: 100%;
+      max-width: 425px;
+      height: 100vh;
+      transition: .4s all ease-in-out;
+      transform: translateX(100%);
+
+      &.active {
+        transform: translateX(0);
+      }
+
+      &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        width: auto;
+        height: 100%;
+        z-index: -1;
+        background: rgba($black-color, .75);
+        backdrop-filter: blur(10px);
+      }
+
+      ul {
+        flex-direction: column;
       }
     }
   }

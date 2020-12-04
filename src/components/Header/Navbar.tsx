@@ -1,8 +1,33 @@
 import React from 'react'
+import cn from 'classnames'
 
-const Navbar: React.FC = () => {
+type PropType = {
+	active: boolean
+	offNavbar: () => void
+}
+
+const Navbar: React.FC<PropType> = ({ active, offNavbar }) => {
+
+	const navbarRef = React.useRef<HTMLDivElement>(null)
+
+	const handleOutsideClick = (event: MouseEvent | any) => {
+		if (active) {
+			const path = event.path || (event.composedPath && event.composedPath()) // firefox uses composedPath
+			if (!path.includes(navbarRef.current)) {
+				offNavbar()
+			}
+		}
+		return
+	}
+
+	React.useEffect(() => {
+		document.body.addEventListener('click', handleOutsideClick)
+
+		return () => document.body.removeEventListener('click', handleOutsideClick)
+	})
+
 	return (
-		<nav className={'header__navbar'}>
+		<nav className={cn('header__navbar', { 'active': active })} ref={navbarRef}>
 			<ul>
 				<li><a href="/#" className={'active'}>Home</a></li>
 				<li><a href="/#">About</a></li>
