@@ -1,0 +1,24 @@
+@import "../../../styles/variables";
+
+.logo {
+  font-weight: 700;
+  font-size: 25px;
+
+  a {
+    color: #fff;
+    display: block;
+    text-transform: uppercase;
+
+    span {
+      color: $blue-color;
+
+      &:first-child {
+        margin-right: 8px;
+      }
+
+      &:last-child {
+        margin-left: 8px;
+      }
+    }
+  }
+}

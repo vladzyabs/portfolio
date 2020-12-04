@@ -1,0 +1,94 @@
+@import "../../styles/variables";
+
+.main {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 1;
+
+  &:after {
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba($black-color, .6);
+  }
+
+  &__bg {
+    width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+      min-height: 100vh;
+      height: fit-content;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    padding-top: 30vh;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    color: #fff;
+  }
+
+  &__photo {
+    display: block;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    margin: 0 auto 35px auto;
+
+    &:hover {
+      img {
+        transform: scale(1.2);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      object-fit: cover;
+      transition: .3s all;
+    }
+  }
+
+  &__description {
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  &__sup-title {
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    font-size: 40px;
+
+    span {
+      display: inline-block;
+      min-width: 100px;
+    }
+
+    span:after {
+      display: inline-block;
+      margin-left: 2px;
+      transform: translateY(-5px);
+    }
+  }
+}
