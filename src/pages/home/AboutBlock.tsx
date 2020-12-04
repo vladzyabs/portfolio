@@ -6,6 +6,9 @@ const AboutBlock: React.FC = () => {
 		<section className={'about'}>
 			<Container>
 				<Title title={'About me'} className={'about__title'} supTitle={'vfsdvdfvdfvdf'}/>
+				<div className={'about__content'}>
+
+				</div>
 			</Container>
 		</section>
 	)
