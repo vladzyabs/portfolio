@@ -9,7 +9,6 @@ const Box = styled.div`
   width: 30px;
 `
 
-
 const Line = styled.div`
 	display: block;
     width: 100%;
