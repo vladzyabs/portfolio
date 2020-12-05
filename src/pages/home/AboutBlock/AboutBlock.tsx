@@ -32,7 +32,7 @@ const AboutBlock: React.FC = () => {
 			<Container>
 				<Title title={'My skills'}
 							 className={'about__title'}
-							 supTitle={'AboutBlock me'}
+							 supTitle={'About me'}
 				/>
 				<div className={'about__content'}>
 					{

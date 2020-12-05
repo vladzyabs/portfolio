@@ -1,0 +1,37 @@
+.button {
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  position: fixed;
+  display: block;
+  z-index: 999;
+  bottom: 30px;
+  right: 30px;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  color: #037ef3;
+  font-size: 25px;
+  background: transparent;
+  transform: scale(0);
+  transition: .3s all ease-in;
+
+  &:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    width: auto;
+    height: 100%;
+    z-index: -1;
+    background: rgba(0, 0, 0, .75);
+    backdrop-filter: blur(10px);
+  }
+
+  &.show {
+    transform: scale(1);
+  }
+}
