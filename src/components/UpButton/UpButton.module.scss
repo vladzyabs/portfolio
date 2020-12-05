@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.button {
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  position: fixed;
+  display: block;
+  z-index: 999;
+  bottom: 30px;
+  right: 30px;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  color: $blue-color;
+  font-size: 25px;
+  background: transparent;
+  transform: scale(0);
+  transition: .3s all ease-in;
+
+  &:after {
+    @include background-blur($black-color);
+  }
+
+  &.show {
+    transform: scale(1);
+  }
+}
