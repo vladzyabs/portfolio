@@ -6,6 +6,8 @@ import BurgerBtn from './BurgerBtn'
 
 import './styles.scss'
 
+// (completed) TODO: When the page is scrolled - disable the active navigation bar
+
 const Header: React.FC = () => {
 
 	const [scrolling, setScrolling] = React.useState<boolean>(false)
@@ -15,6 +17,7 @@ const Header: React.FC = () => {
 	const offNavbar = () => setActiveNavbar(prevState => false)
 
 	const scrollPageHandler = () => {
+		offNavbar()
 		window.pageYOffset > 50
 			? setScrolling(true)
 			: setScrolling(false)
