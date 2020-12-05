@@ -1,5 +1,10 @@
 @import "../../styles/variables";
 
+@mixin indents-section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 .main {
   position: relative;
   width: 100%;
@@ -89,6 +94,47 @@
       display: inline-block;
       margin-left: 2px;
       transform: translateY(-5px);
+    }
+  }
+}
+
+.about {
+  @include indents-section;
+
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 50px;
+    grid-row-gap: 40px;
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__skill {
+
+  }
+
+  &__skill-tile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 15px;
+    color: $title-color;
+
+    svg {
+      margin-right: 20px;
+      font-size: 30px;
+
+    }
+
+    h5 {
+      font-size: 17px;
     }
   }
 }

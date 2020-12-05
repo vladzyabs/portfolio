@@ -1,9 +1,9 @@
 import React from 'react'
 // @ts-ignore
 import Typical from 'react-typical'
-import bgImg from '../../assets/img/main1.jpg'
-import photoImg from '../../assets/img/photo.jpg'
-import { Container } from '../../components/common'
+import bgImg from '../../../assets/img/main1.jpg'
+import photoImg from '../../../assets/img/photo.jpg'
+import { Container } from '../../../components/common'
 
 const MainBlock: React.FC = () => {
 	return (
