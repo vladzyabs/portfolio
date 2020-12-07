@@ -134,3 +134,7 @@
     }
   }
 }
+
+.feedback {
+  @include indents-section;
+}
