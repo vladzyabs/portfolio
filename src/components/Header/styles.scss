@@ -27,12 +27,12 @@
       opacity: 1;
     }
 
-    .header__wrapper {
+    .header__content {
       min-height: $header-h-m;
     }
   }
 
-  &__wrapper {
+  &__content {
     display: flex;
     flex-wrap: wrap;
     align-items: center;

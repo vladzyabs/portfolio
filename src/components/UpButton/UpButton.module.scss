@@ -8,7 +8,7 @@
   position: fixed;
   display: block;
   z-index: 999;
-  bottom: 30px;
+  bottom: -30px;
   right: 30px;
   border: none;
   width: 35px;
@@ -18,7 +18,7 @@
   font-size: 25px;
   background: transparent;
   transform: scale(0);
-  transition: .3s all ease-in;
+  transition: .2s all ease-in;
 
   &:after {
     @include background-blur($black-color);
@@ -26,5 +26,6 @@
 
   &.show {
     transform: scale(1);
+    bottom: 30px;
   }
 }

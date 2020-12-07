@@ -32,7 +32,7 @@ const Header: React.FC = () => {
 	return (
 		<header className={cn('header', { 'scrolling': scrolling })}>
 			<Container>
-				<div className={'header__wrapper'}>
+				<div className={'header__content'}>
 					<Logo className={'header__logo'}/>
 					<BurgerBtn onToggle={toggleActiveNavbar} activeClose={activeNavbar}/>
 					<Navbar active={activeNavbar} offNavbar={offNavbar}/>

@@ -3,22 +3,14 @@ import MainBlock from './MainBlock/MainBlock'
 
 import './styles.scss'
 import AboutBlock from './AboutBlock/AboutBlock'
+import FeedbackFormBlock from './FeedbackFormBlock/FeedbackFormBlock'
 
 const HomePage: React.FC = () => {
 	return (
 		<React.Fragment>
 			<MainBlock/>
 			<AboutBlock/>
-
-			<br/>
-			<br/>
-
-			<div className="burger">
-				<span>{''}</span>
-				<span>{''}</span>
-				<span>{''}</span>
-			</div>
-
+			<FeedbackFormBlock/>
 		</React.Fragment>
 	)
 }
