@@ -9,16 +9,6 @@ const HomePage: React.FC = () => {
 		<React.Fragment>
 			<MainBlock/>
 			<AboutBlock/>
-
-			<br/>
-			<br/>
-
-			<div className="burger">
-				<span>{''}</span>
-				<span>{''}</span>
-				<span>{''}</span>
-			</div>
-
 		</React.Fragment>
 	)
 }

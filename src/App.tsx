@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, UpButton } from './components'
+import { Header, UpButton, Footer } from './components'
 import HomePage from './pages/home'
 
 const App: React.FC = () => {
@@ -10,6 +10,7 @@ const App: React.FC = () => {
 
 			<HomePage/>
 
+			<Footer/>
 		</>
 	)
 }
