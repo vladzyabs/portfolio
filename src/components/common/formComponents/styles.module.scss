@@ -21,11 +21,29 @@
 .inputWrapper, .textareaWrapper {
   position: relative;
 
+  .description {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 7px;
+  }
+
   .label {
     display: inline-block;
     font-size: 18px;
+    font-weight: 700;
     color: $blue-color;
-    margin-bottom: 7px;
+    margin-right: 10px;
+  }
+
+  .error {
+    svg {
+      margin-right: 7px;
+    }
+    font-size: 18px;
+    font-weight: 700;
+    color: $red-color;
   }
 
   .icon {

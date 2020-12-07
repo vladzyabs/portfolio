@@ -14,14 +14,15 @@ const Input: React.FC<PropType> = ({ label, error, icon, ...props }) => {
 	return (
 		<div className={classes.inputWrapper}>
 			<label>
-				{label && <span className={classes.label}>{label}</span>}
-
-				<input type="text" required {...props}/>
-
-				{error && <span className={classes.error}>
+				<div className={classes.description}>
+					{label && <span className={classes.label}>{label}</span>}
+					{error && <span className={classes.error}>
 						<FontAwesomeIcon icon={faExclamation}/>
-					{error}
+						{error}
 					</span>}
+				</div>
+
+				<input type="text" {...props}/>
 
 				{icon && <span className={classes.icon}>
 					<FontAwesomeIcon icon={icon}/>
