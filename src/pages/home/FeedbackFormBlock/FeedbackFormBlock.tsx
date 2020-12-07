@@ -1,8 +1,5 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faEnvelope, faPen, faCommentAlt, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
-import { Button, Container, Input, Title } from '../../../components/common'
-import Textarea from '../../../components/common/formComponents/Textarea'
+import { Container, Title } from '../../../components/common'
 import FeedbackForm from './FeedbackForm'
 
 const FeedbackFormBlock: React.FC = () => {

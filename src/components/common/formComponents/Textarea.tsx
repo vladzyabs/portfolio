@@ -14,14 +14,15 @@ const Textarea: React.FC<PropType> = ({ label, error, icon, ...props }) => {
 	return (
 		<div className={classes.textareaWrapper}>
 			<label>
-				{label && <span className={classes.label}>{label}</span>}
-
-				<textarea required {...props}/>
-
-				{error && <span className={classes.error}>
+				<div className={classes.description}>
+					{label && <span className={classes.label}>{label}</span>}
+					{error && <span className={classes.error}>
 						<FontAwesomeIcon icon={faExclamation}/>
-					{error}
+						{error}
 					</span>}
+				</div>
+
+				<textarea {...props}/>
 
 				{icon && <span className={classes.icon}>
 					<FontAwesomeIcon icon={icon}/>
