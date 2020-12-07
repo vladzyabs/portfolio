@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { faExclamation } from '@fortawesome/free-solid-svg-icons'
-import classes from './Input.module.scss'
+import classes from './styles.module.scss'
 
 type PropType = {
 	label?: string
@@ -12,12 +12,11 @@ type PropType = {
 
 const Input: React.FC<PropType> = ({ label, error, icon, ...props }) => {
 	return (
-		<div className={classes.wrapper}>
-			<label className={classes.underlined}>
+		<div className={classes.inputWrapper}>
+			<label>
+				{label && <span className={classes.label}>{label}</span>}
 
 				<input type="text" required {...props}/>
-
-				{label && <span className={classes.label}>{label}</span>}
 
 				{error && <span className={classes.error}>
 						<FontAwesomeIcon icon={faExclamation}/>

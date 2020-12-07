@@ -1,7 +1,6 @@
 @import "../../../styles/variables";
 
 .wrapper {
-  color: $title-color;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -28,8 +27,14 @@
   }
 
   .title {
+    color: $title-color;
     font-size: 30px;
     text-transform: uppercase;
     text-shadow: 2px 2px 2px rgba(41, 41, 41, 0.35);
+  }
+
+  .secondary {
+    color: #fff;
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.35);
   }
 }

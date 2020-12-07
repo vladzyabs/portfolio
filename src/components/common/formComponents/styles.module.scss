@@ -1,0 +1,92 @@
+@import "../../../styles/variables";
+
+@mixin common {
+  border-radius: 5px;
+  font-size: 22px;
+  padding: 10px 20px;
+  color: $title-color;
+  transition: .3s all ease-out;
+  width: 100%;
+}
+
+@mixin shadow($color) {
+  box-shadow: 0 2px 8px rgba($color, .6);
+}
+
+.button, input, textarea {
+  outline: none;
+  border: none;
+}
+
+.inputWrapper, .textareaWrapper {
+  position: relative;
+
+  .label {
+    display: inline-block;
+    font-size: 18px;
+    color: $blue-color;
+    margin-bottom: 7px;
+  }
+
+  .icon {
+    position: absolute;
+    font-size: 20px;
+    bottom: 10px;
+    right: 10px;
+    color: #555;
+  }
+}
+
+@mixin active-label {
+  color: $blue-color;
+}
+
+.inputWrapper {
+  input {
+    @include common;
+    padding-right: 40px;
+    opacity: .9;
+
+    &:hover, &:focus, &:active {
+      @include shadow(#fff);
+      opacity: 1;
+    }
+  }
+}
+
+.textareaWrapper {
+  .icon {
+    top: 35px
+  }
+
+  textarea {
+    @include common;
+    resize: none;
+    padding-right: 40px;
+    opacity: .9;
+
+    &:hover, &:focus, &:active {
+      @include shadow(#fff);
+      opacity: 1;
+    }
+  }
+}
+
+.button {
+  @include common;
+  cursor: pointer;
+  background-color: $blue-color;
+  color: #fff;
+
+  &:hover, &:focus {
+    background-color: darken($blue-color, 8);
+    @include shadow($blue-color)
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $blue-color;
+    opacity: 0.6;
+    box-shadow: none;
+  }
+}

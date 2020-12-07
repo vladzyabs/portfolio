@@ -19,6 +19,7 @@
     "@types/styled-components": "^5.1.4",
     "@types/uuid": "^8.3.0",
     "classnames": "^2.2.6",
+    "formik": "^2.2.5",
     "node-sass": "4.14.1",
     "normalize.css": "^8.0.1",
     "react": "^17.0.1",
