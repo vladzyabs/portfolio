@@ -26,13 +26,26 @@ const Navbar: React.FC<PropType> = ({ active, offNavbar }) => {
 		return () => document.body.removeEventListener('click', handleOutsideClick)
 	})
 
+	const links = [
+		{ link: '/#', title: 'Home' },
+		{ link: '/#', title: 'About' },
+		{ link: '/#', title: 'Projects' },
+		{ link: '/#', title: 'Contact' },
+	]
+
 	return (
 		<nav className={cn('header__navbar', { 'active': active })} ref={navbarRef}>
 			<ul>
-				<li><a href="/#" className={'active'}>Home</a></li>
-				<li><a href="/#">About</a></li>
-				<li><a href="/#">Projects</a></li>
-				<li><a href="/#">Contact</a></li>
+
+				{
+					links.map((l, i) => <li key={`${l.title}_${i}`} style={{transitionDelay: `${i/10}s`}}>
+						<a href={l.link}>{l.title}</a>
+					</li>)
+				}
+				{/*<li><a href="/#" className={'active'}>Home</a></li>*/}
+				{/*<li><a href="/#">About</a></li>*/}
+				{/*<li><a href="/#">Projects</a></li>*/}
+				{/*<li><a href="/#">Contact</a></li>*/}
 			</ul>
 		</nav>
 	)

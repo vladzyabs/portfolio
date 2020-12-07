@@ -97,11 +97,17 @@
       width: 100%;
       max-width: 425px;
       height: 100vh;
-      transition: .4s all ease-in-out;
+      transition: .3s all ease-in-out;
       transform: translateX(100%);
 
       &.active {
         transform: translateX(0);
+
+        ul {
+          & > li {
+            transform: translateX(0);
+          }
+        }
       }
 
       &:after {
@@ -116,7 +122,8 @@
         & > li {
           margin-bottom: 20px;
           font-size: 24px;
-
+          transform: translateX(100%);
+          transition: .5s all cubic-bezier(0, 0.44, 0.09, 1.32);
           a {letter-spacing: 5px;}
         }
       }
