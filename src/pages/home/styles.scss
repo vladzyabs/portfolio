@@ -137,4 +137,9 @@
 
 .feedback {
   @include indents-section;
+
+  & > div {
+    display: flex;
+    align-items: flex-start;
+  }
 }
