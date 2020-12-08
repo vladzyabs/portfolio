@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -30,8 +31,15 @@ const FeedbackForm: React.FC = () => {
 			message: '',
 		},
 		validationSchema,
-		onSubmit: values => {
-			alert(JSON.stringify(values, null, 2))
+		onSubmit: (values) => {
+			axios.post<string>('https://site-portfolio-server.herokuapp.com/send-message', { values })
+				.then(res => {
+					if (res.status === 200) {
+						return alert('Message sent')
+					}
+					alert('Oops, something went wrong. Try later')
+				})
+				.catch(() => alert('Oops, something went wrong. Try later'))
 		},
 	})
 
@@ -65,7 +73,14 @@ const FeedbackForm: React.FC = () => {
 					/>
 				</div>
 				<div className={'feedback__form-button'}>
-					<Button type={'submit'}>Send <FontAwesomeIcon icon={faPaperPlane}/></Button>
+					<Button type={'submit'}
+									disabled={
+										!!formik.errors.message ||
+										!!formik.errors.subject ||
+										!!formik.errors.email ||
+										!!formik.errors.name
+									}
+					>Send <FontAwesomeIcon icon={faPaperPlane}/></Button>
 				</div>
 			</div>
 		</form>
