@@ -3,6 +3,10 @@
   padding-bottom: 50px;
 }
 
+@mixin shadow-text($color) {
+  text-shadow: 2px 2px 2px rgba($color, 0.35);
+}
+
 // injection in after
 @mixin background-blur($color-bg) {
   position: absolute;

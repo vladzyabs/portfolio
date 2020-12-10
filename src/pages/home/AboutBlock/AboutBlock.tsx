@@ -1,4 +1,6 @@
 import React from 'react'
+// @ts-ignore
+import Flip from 'react-reveal/Flip'
 import { Container, Title } from '../../../components/common'
 import jsIcon from '../../../assets/icons/skills-icon/js_icon.svg'
 import reactIcon from '../../../assets/icons/skills-icon/react_icon.svg'
@@ -36,11 +38,10 @@ const AboutBlock: React.FC = () => {
 				/>
 				<div className={'about__content'}>
 					{
-						skills.map((s, i) => <Skill key={`${s.id}_${i}`}
-																				title={s.title}
-																				skillLevel={s.skillLevel}
-																				icon={s.icon}
-						/>)
+						skills.map((s, i) => <Flip key={`${s.id}_${i}`} top><Skill title={s.title}
+																																			 skillLevel={s.skillLevel}
+																																			 icon={s.icon}
+						/></Flip>)
 					}
 				</div>
 			</Container>
