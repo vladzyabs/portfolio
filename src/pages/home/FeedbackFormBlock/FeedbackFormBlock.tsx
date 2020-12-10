@@ -1,4 +1,6 @@
 import React from 'react'
+// @ts-ignore
+import Fade from 'react-reveal/Fade'
 import { useSelector } from 'react-redux'
 import { AppRootReducerType } from '../../../store/rootReducer'
 import { StatusFeedbackFormType } from '../../../store/home/types'
@@ -15,9 +17,9 @@ const FeedbackFormBlock: React.FC = () => {
 					<Title title={'contact me now'} supTitle={'feedback'} className={'feedback__title'} secondary/>
 					<FeedbackForm statusForm={statusForm}/>
 					{
-						statusForm === 'sent' && <div className={'feedback__sent-form'}>
+						statusForm === 'sent' && <Fade top><div className={'feedback__sent-form'}>
 							<p>Thanks for contacting me. Your message has been sent to my mail. I will definitely answer you.</p>
-						</div>
+						</div></Fade>
 					}
 				</div>
 			</Container>
