@@ -3,12 +3,11 @@ import cn from 'classnames'
 import { Container, Logo } from '../common'
 import Navbar from './Navbar'
 import BurgerBtn from './BurgerBtn'
+import Loader from './Loader'
 
 import './styles.scss'
 
-// (completed) TODO: When the page is scrolled - disable the active navigation bar
-
-const Header: React.FC = () => {
+const Header: React.FC<{showLoader: boolean}> = ({showLoader}) => {
 
 	const [scrolling, setScrolling] = React.useState<boolean>(false)
 	const [activeNavbar, setActiveNavbar] = React.useState<boolean>(false)
@@ -31,6 +30,7 @@ const Header: React.FC = () => {
 
 	return (
 		<header className={cn('header', { 'scrolling': scrolling })}>
+			{showLoader && <Loader/>}
 			<Container>
 				<div className={'header__content'}>
 					<Logo className={'header__logo'}/>

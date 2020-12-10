@@ -1,10 +1,13 @@
 import React from 'react'
-import axios from 'axios'
+import { useDispatch } from 'react-redux'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCommentAlt, faEnvelope, faPaperPlane, faPen, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faCommentAlt, faEnvelope, faPaperPlane, faPen, faUser, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { StatusFeedbackFormType } from '../../../store/home/types'
+import { sendFeedbackForm } from '../../../store/home/homeReducer'
 import { Button, Input, Textarea } from '../../../components/common'
+import { FeedbackFormType } from '../../../api/apiType'
 
 const validationSchema = Yup.object({
 	name: Yup.string()
@@ -22,8 +25,10 @@ const validationSchema = Yup.object({
 		.max(500, 'Must be 500 characters or less'),
 })
 
-const FeedbackForm: React.FC = () => {
-	const formik = useFormik({
+const FeedbackForm: React.FC<{ statusForm: StatusFeedbackFormType }> = ({ statusForm }) => {
+	const dispatch = useDispatch()
+
+	const formik = useFormik<FeedbackFormType>({
 		initialValues: {
 			name: '',
 			email: '',
@@ -32,14 +37,7 @@ const FeedbackForm: React.FC = () => {
 		},
 		validationSchema,
 		onSubmit: (values) => {
-			axios.post<string>('https://site-portfolio-server.herokuapp.com/send-message', { values })
-				.then(res => {
-					if (res.status === 200) {
-						return alert('Message sent')
-					}
-					alert('Oops, something went wrong. Try later')
-				})
-				.catch(() => alert('Oops, something went wrong. Try later'))
+			dispatch(sendFeedbackForm(values))
 		},
 	})
 
@@ -78,9 +76,15 @@ const FeedbackForm: React.FC = () => {
 										!!formik.errors.message ||
 										!!formik.errors.subject ||
 										!!formik.errors.email ||
-										!!formik.errors.name
+										!!formik.errors.name ||
+										statusForm === 'loading' ||
+										statusForm === 'sent'
 									}
-					>Send <FontAwesomeIcon icon={faPaperPlane}/></Button>
+					>Send
+						{statusForm === 'loading'
+							? <FontAwesomeIcon icon={faSpinner} pulse/>
+							: <FontAwesomeIcon icon={faPaperPlane}/>}
+					</Button>
 				</div>
 			</div>
 		</form>

@@ -198,5 +198,24 @@
 
   &__form-button {
     margin-top: auto;
+
+    svg {
+      margin-left: 10px;
+    }
+  }
+
+  &__sent-form {
+    margin-top: 50px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+.contacts {
+  @include indents-section;
+
+  &__title {
+    margin-bottom: 50px;
   }
 }
