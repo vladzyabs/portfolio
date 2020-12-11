@@ -19,12 +19,12 @@ type SkillType = {
 }
 
 const skills = [
-	{ id: '1', title: 'JavaScript', skillLevel: 75, icon: 'url(' + jsIcon + ')', color: '' },
-	{ id: '2', title: 'TypeScript', skillLevel: 50, icon: 'url(' + ts2Icon + ')', color: '' },
-	{ id: '3', title: 'React', skillLevel: 80, icon: 'url(' + reactIcon + ')', color: '' },
-	{ id: '4', title: 'Redux', skillLevel: 85, icon: 'url(' + reduxIcon + ')', color: '' },
-	{ id: '4', title: 'sass (scss)', skillLevel: 85, icon: 'url(' + sassIcon + ')', color: '' },
-	{ id: '4', title: 'html', skillLevel: 85, icon: 'url(' + htmlIcon + ')', color: '' },
+	{ id: '1', title: 'JavaScript', skillLevel: 75, icon: jsIcon, color: '' },
+	{ id: '2', title: 'TypeScript', skillLevel: 50, icon: ts2Icon, color: '' },
+	{ id: '3', title: 'React', skillLevel: 80, icon: reactIcon, color: '' },
+	{ id: '4', title: 'Redux', skillLevel: 85, icon: reduxIcon, color: '' },
+	{ id: '4', title: 'sass (scss)', skillLevel: 85, icon: sassIcon, color: '' },
+	{ id: '4', title: 'html', skillLevel: 85, icon: htmlIcon, color: '' },
 ] as SkillType[]
 
 
@@ -32,10 +32,12 @@ const AboutBlock: React.FC = () => {
 	return (
 		<section className={'about'}>
 			<Container>
+
 				<Title title={'My skills'}
 							 className={'about__title'}
 							 supTitle={'About me'}
 				/>
+
 				<div className={'about__content'}>
 					{
 						skills.map((s, i) => <Flip key={`${s.id}_${i}`} top><Skill title={s.title}
@@ -44,6 +46,7 @@ const AboutBlock: React.FC = () => {
 						/></Flip>)
 					}
 				</div>
+
 			</Container>
 		</section>
 	)
