@@ -30,7 +30,7 @@ const skills = [
 
 const AboutBlock: React.FC = () => {
 	return (
-		<section className={'about'}>
+		<section className={'about'} id={'about'}>
 			<Container>
 
 				<Title title={'My skills'}

@@ -53,6 +53,7 @@
       }
 
       a {
+        cursor: pointer;
         position: relative;
         color: #fff;
         text-transform: uppercase;
@@ -63,6 +64,7 @@
 
         &.active {
           color: $blue-color;
+          font-weight: 700;
         }
 
         &:after {
