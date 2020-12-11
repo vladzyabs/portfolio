@@ -65,6 +65,10 @@
         &.active {
           color: $blue-color;
           font-weight: 700;
+
+          &:after {
+            display: none;
+          }
         }
 
         &:after {
