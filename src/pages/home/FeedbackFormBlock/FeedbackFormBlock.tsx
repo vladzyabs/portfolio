@@ -11,7 +11,7 @@ const FeedbackFormBlock: React.FC = () => {
 	const statusForm = useSelector<AppRootReducerType, StatusFeedbackFormType>(state => state.home.statusFeedbackForm)
 
 	return (
-		<section className={'feedback'}>
+		<section className={'feedback'} id={'feedback'}>
 			<Container>
 				<div className="feedback__content">
 					<Title title={'contact me now'} supTitle={'feedback'} className={'feedback__title'} secondary/>

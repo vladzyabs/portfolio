@@ -4,6 +4,8 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCommentAlt, faEnvelope, faPaperPlane, faPen, faUser, faSpinner } from '@fortawesome/free-solid-svg-icons'
+// @ts-ignore
+import Zoom from 'react-reveal/Zoom'
 import { StatusFeedbackFormType } from '../../../store/home/types'
 import { sendFeedbackForm } from '../../../store/home/homeReducer'
 import { Button, Input, Textarea } from '../../../components/common'
@@ -44,33 +46,33 @@ const FeedbackForm: React.FC<{ statusForm: StatusFeedbackFormType }> = ({ status
 	return (
 		<form className={'feedback__form'} onSubmit={formik.handleSubmit}>
 			<div className={'feedback__form-l'}>
-				<div className="feedback__form-item">
+				<Zoom><div className="feedback__form-item">
 					<Input label={'Name'} icon={faUser}
 								 error={formik.touched.name && formik.errors.name ? formik.errors.name : null}
 								 {...formik.getFieldProps('name')}
 					/>
-				</div>
-				<div className="feedback__form-item">
+				</div></Zoom>
+				<Zoom><div className="feedback__form-item">
 					<Input label={'Email'} icon={faEnvelope}
 								 error={formik.touched.email && formik.errors.email ? formik.errors.email : null}
 								 {...formik.getFieldProps('email')}
 					/>
-				</div>
-				<div className="feedback__form-item">
+				</div></Zoom>
+				<Zoom><div className="feedback__form-item">
 					<Input label={'Subject '} icon={faPen}
 								 error={formik.touched.subject && formik.errors.subject ? formik.errors.subject : null}
 								 {...formik.getFieldProps('subject')}
 					/>
-				</div>
+				</div></Zoom>
 			</div>
 			<div className={'feedback__form-r'}>
-				<div className="feedback__form-item">
+				<Zoom><div className="feedback__form-item">
 					<Textarea label={'Your Message'} icon={faCommentAlt} rows={3}
 										error={formik.touched.message && formik.errors.message ? formik.errors.message : null}
 										{...formik.getFieldProps('message')}
 					/>
-				</div>
-				<div className={'feedback__form-button'}>
+				</div></Zoom>
+				<Zoom><div className={'feedback__form-button'}>
 					<Button type={'submit'}
 									disabled={
 										!!formik.errors.message ||
@@ -85,7 +87,7 @@ const FeedbackForm: React.FC<{ statusForm: StatusFeedbackFormType }> = ({ status
 							? <FontAwesomeIcon icon={faSpinner} pulse/>
 							: <FontAwesomeIcon icon={faPaperPlane}/>}
 					</Button>
-				</div>
+				</div></Zoom>
 			</div>
 		</form>
 	)

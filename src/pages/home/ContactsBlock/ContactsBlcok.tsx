@@ -7,7 +7,7 @@ import { Container } from '../../../components/common'
 
 const ContactsBlock: React.FC = () => {
 	return (
-		<section className={'contacts'}>
+		<section className={'contacts'} id={'contacts'}>
 			<Container>
 				<div className="contacts__content">
 

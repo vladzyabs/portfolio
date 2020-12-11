@@ -11,7 +11,7 @@ import { Container } from '../../../components/common'
 
 const MainBlock: React.FC = () => {
 	return (
-		<main className={'main'}>
+		<main className={'main'} id={'main'}>
 			<div className={'main__bg'}>
 				<img src={bgImg} alt="background"/>
 			</div>

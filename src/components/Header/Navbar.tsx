@@ -1,5 +1,6 @@
 import React from 'react'
 import cn from 'classnames'
+import {Link} from 'react-scroll'
 
 type PropType = {
 	active: boolean
@@ -27,10 +28,10 @@ const Navbar: React.FC<PropType> = ({ active, offNavbar }) => {
 	})
 
 	const links = [
-		{ link: '/#', title: 'Home' },
-		{ link: '/#', title: 'About' },
-		{ link: '/#', title: 'Projects' },
-		{ link: '/#', title: 'Contact' },
+		{ link: 'main', title: 'Home' },
+		{ link: 'about', title: 'About' },
+		{ link: 'feedback', title: 'Feedback' },
+		{ link: 'contacts', title: 'Contact' },
 	]
 
 	return (
@@ -39,7 +40,12 @@ const Navbar: React.FC<PropType> = ({ active, offNavbar }) => {
 
 				{
 					links.map((l, i) => <li key={`${l.title}_${i}`} style={{transitionDelay: `${i/10}s`}}>
-						<a href={l.link}>{l.title}</a>
+						<Link to={l.link}
+									activeClass={'active'}
+									spy={true}
+									smooth={true}
+									offset={-60}
+						>{l.title}</Link>
 					</li>)
 				}
 				{/*<li><a href="/#" className={'active'}>Home</a></li>*/}
