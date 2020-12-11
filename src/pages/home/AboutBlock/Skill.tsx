@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import { ProgressBar } from '../../../components/common'
 import { Icon } from './Icon'
 
