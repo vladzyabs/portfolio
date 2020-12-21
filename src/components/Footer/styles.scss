@@ -48,8 +48,26 @@
       transition: .2s all;
 
       &:hover {
-        border-color: $blue-color;
-        color: $blue-color;
+        //border-color: $blue-color;
+        color: #fff;
+
+        &.hvr-github {
+          border-color: #333;
+          background-color: #333;
+        }
+        &.hvr-linkedin {
+          border-color: #0077b5;
+          background-color: #0077b5;
+        }
+        &.hvr-telegram {
+          border-color: #0088cc;
+          background-color: #0088cc;
+        }
+        &.hvr-instagram {
+          border-color: #c13584;
+          background-color: #c13584;
+        }
+
       }
     }
   }
